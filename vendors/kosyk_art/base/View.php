@@ -11,23 +11,36 @@ class View {
     public $layout = 'main';
     public $content = false;
     public $route;
+    public $lang_files = array();
     
     public function __construct($route){
         $this->route = $route;
     }
 
 
-    public function render($page){
-        ob_start();
-        include_once ROOT.'/templates/'.$this->route['controller'].'/'.$page.'.php';
+    public function render($page, $data = []){
+        extract($data);
+        $this->lang_files[] = $this->layout;
+        $this->lang_files[] = $page;
+        foreach($this->lang_files as $file){
+            if(file_exists(ROOT.'/lang/'.$file.'.php')){
+                $lang_array = include_once ROOT.'/lang/'.$file.'.php';
+                foreach ($lang_array as $key=>$value){
+                    if(isset($value[LANG])){
+                        extract($value[LANG], EXTR_PREFIX_ALL, $file.'_'.$key);
+                    }
+                }
+            }
+        }
+        ob_start();        
+        include_once ROOT.'/templates/'.$this->route['controller'].'/'.$page.'.php';        
         $content = ob_get_clean();
-        include_once ROOT.'/templates/layouts/'.$this->layout.'.php';
+        if(file_exists(ROOT.'/templates/layouts/'.$this->layout.'.php')){
+            include_once ROOT.'/templates/layouts/'.$this->layout.'.php';
+        }
     }
-    
-    public function begin(){
-        echo 'begin';
-    }
-    
+
+
     public function insertCss(){
         if(isset($this->css['layout'])){
             foreach ($this->css['layout'] as $path){                

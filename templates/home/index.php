@@ -1,7 +1,7 @@
 <?php
-    $this->title = 'home';
-    $this->css['template'][] = 'css/style2';
+    //$this->layout = 'second';
+    $this->lang_files[] = 'home'; 
 ?>
-<h1>home</h1>
-<?php $this->begin();?>
+<h1>home</h1>        
 <h2>header</h2>
+<?=$title;?>
