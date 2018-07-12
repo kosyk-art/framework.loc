@@ -20,6 +20,6 @@ class Application {
         }
         $controllerName = '\controllers\ErrorController';
         $actionName = 'actionNotfounded';
-        (new $controllerName(array(), $this->config))->$actionName($this->config);
+        (new $controllerName(array('controller'=>'error', 'action'=>'notfounded'), $this->config))->$actionName($this->config);
     }
 }

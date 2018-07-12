@@ -1,7 +1,36 @@
 <?php
 
 return array(
-    'home' => 'home/index',
-    '(.+)/c([0-9]+)' => 'catalog/category/$2/$1'
+    'about' => 'site/about',
+    'contacts' => 'site/contacts',    
+    'delivery-and-payment' => 'site/delivery-and-payment',
+    'home' => 'site/home',
+    'schedule' => 'site/schedule',
+    'gallery' => 'site/gallery',
+    'search/(.+)' => 'site/search/$1',
+    'cart' => 'cart/cart',
+    'congratulations' => 'cart/congratulations',
+    'checkout' => 'cart/checkout',
+    'team/(.+)' => 'team/employee/$1',
+    'team' => 'team/team',
+    'catalog/(.+)/(.+)' => 'catalog/product/$1/$2',
+    'catalog/(.+)' => 'catalog/category/$1',
+    'catalog' => 'catalog/catalog',
+    'blog/(.+)/(.+)' => 'blog/article/$1/$2',
+    'blog/(.+)' => 'blog/topic/$1',    
+    'blog' => 'blog/blog',
+    'promotions/(.+)' => 'promotion/promotion/$1',
+    'promotions' => 'promotion/promotions',
+    'services/(.+)' => 'services/service/$1',
+    'services' => 'services/services',
+    'feedback/callback' => 'feedback/callback',
+    'feedback/recording' => 'feedback/recording',
+    'feedback/question' => 'feedback/question',
+    'login' => 'user/login',
+    'logout' => 'user/logout',
+    'profile/([0-9]+)' => 'user/profile/$1',
+    'registration' => 'user/registration',
+    'activation' => 'user/activation',
+    'activation-success' => 'user/activation-success',
 );
 

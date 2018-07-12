@@ -52,7 +52,10 @@ class Router {
         if(!empty($patterns)){            
             $route = array();
             $route['controller'] = array_shift($patterns);
-            $route['action'] = array_shift($patterns);
+            $action = str_replace('-', ' ', array_shift($patterns));
+            $action = ucwords($action);
+            $action = str_replace(' ', '', $action);
+            $route['action'] = $action;            
             $route['params'] = $patterns;
         }
         return $route;
