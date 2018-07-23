@@ -5,7 +5,6 @@ use vendors\kosyk_art\base\Controller;
 
 class SiteController extends Controller{
     public function actionHome(){
-        echo $this->model->db();
         $this->view->render('home');        
     }
     
@@ -31,5 +30,13 @@ class SiteController extends Controller{
     
     public function actionGallery(){
         $this->view->render('gallery');
+    }
+    
+    public function actionCardsAndPrice(){
+        $this->view->render('cards-and-price');
+    }
+    
+    public function actionFitnessBar(){
+        $this->view->render('fitness-bar');
     }
 }

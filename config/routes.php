@@ -4,6 +4,8 @@ return array(
     'about' => 'site/about',
     'contacts' => 'site/contacts',    
     'delivery-and-payment' => 'site/delivery-and-payment',
+    'cards-and-price' => 'site/cards-and-price',
+    'fitness-bar' => 'site/fitness-bar',
     'home' => 'site/home',
     'schedule' => 'site/schedule',
     'gallery' => 'site/gallery',
